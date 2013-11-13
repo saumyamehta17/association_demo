@@ -20,7 +20,8 @@
         <%#= f.check_box :supplier_ids %>
         <%#= hidden_field_tag  "customer[supplier_ids][]" , nil %>
         <%= check_box_tag "customer[supplier_ids][]", supplier.id , @customer.supplier_ids.include?(supplier.id) , id: dom_id(supplier) %>
-        <%= label_tag dom_id(supplier) , supplier.name %><br/>
+        <%= label_tag dom_id(supplier
+        ) , supplier.name %><br/>
      <% end %>
   </div>
   <div class="actions">
