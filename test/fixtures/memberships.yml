@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  customer_id: 1
+  supplier_id: 1
+  customer: 
+  supplier: 
+
+two:
+  customer_id: 1
+  supplier_id: 1
+  customer: 
+  supplier: 

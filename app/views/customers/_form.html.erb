@@ -1,0 +1,29 @@
+<%= simple_form_for(@customer) do |f| %>
+  <% if @customer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+      <ul>
+      <% @customer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div>
+     <% Supplier.all.each do |supplier| %>
+        <%#= f.check_box :supplier_ids %>
+        <%#= hidden_field_tag  "customer[supplier_ids][]" , nil %>
+        <%= check_box_tag "customer[supplier_ids][]", supplier.id , @customer.supplier_ids.include?(supplier.id) , id: dom_id(supplier) %>
+        <%= label_tag dom_id(supplier) , supplier.name %><br/>
+     <% end %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
